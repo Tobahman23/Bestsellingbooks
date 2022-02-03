@@ -16,6 +16,25 @@ var bild = "https://media.istockphoto.com/photos/snow-background-white-in-winter
 var title = "Title";
 var desc = "abc";
 var price = "one";
+
+function AutoCard(bild,title,desc,price)
+{
+  var card = $("<div></div>").attr("class", "card");
+  card.css("width", "18rem");
+  var bilden = $("<img></img>").attr("src", bild);
+  bilden.attr("class", "card-img-top");
+  card.append(bilden);
+  var body = $("<div></div>").attr("class", "card-body");
+  var notitle = $("<h3></h3>").attr("class", "card-title").text(title);
+  body.append(notitle);
+  var description = $("<p></p>").attr("class", "card-text").text(desc);
+  body.append(description);
+  card.append(body);
+
+  var help = card.appendTo("body");
+  return help;
+}
 </script>
+<button onclick="CreateCards()">Click</button>
 </body>
 </html>
