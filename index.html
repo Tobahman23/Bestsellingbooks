@@ -8,7 +8,7 @@
 </head>
 <body>
 <script>
-$get("https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=pbRA8cpvuXAK3Ab3ZyF5X5Qci91PnKuA", function (data){
+$.get("https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=pbRA8cpvuXAK3Ab3ZyF5X5Qci91PnKuA", function (data){
     console.log(data);
 
 });
@@ -35,6 +35,6 @@ function AutoCard(bild,title,desc,price)
   return help;
 }
 </script>
-<button onclick="CreateCards()">Click</button>
+<button onclick="AutoCard()">Click</button>
 </body>
 </html>
