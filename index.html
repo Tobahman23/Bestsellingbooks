@@ -3,10 +3,19 @@
 <head>
 <title>Boklista</title>
 <meta charset="utf-8">
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <script>
-$get="https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=pbRA8cpvuXAK3Ab3ZyF5X5Qci91PnKuA"
+$get("https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=pbRA8cpvuXAK3Ab3ZyF5X5Qci91PnKuA", function (data){
+    console.log(data);
+
+});
+var bild = "https://media.istockphoto.com/photos/snow-background-white-in-winter-day-cold-weather-texture-abstract-picture-id626649346";
+var title = "Title";
+var desc = "abc";
+var price = "one";
 </script>
 </body>
 </html>
