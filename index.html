@@ -19,9 +19,7 @@ $.get("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json
     Books.forEach(AutoCard);
 
 });
-$.get("https://booksrun.com/api/price/sell/1464108730?key=dlldqyl7f2izczm4qsu2", function(data){
-    console.log(data);
-})
+
 function AutoCard(item)
 {
   var card = $("<div></div>").attr("class", "card");
@@ -42,7 +40,19 @@ function AutoCard(item)
   card.css("color","white");
 
   card.append(body);
-  
+
+  $.get(`https://booksrun.com/api/v3/price/buy/${item.primary_isbn10}?key=dlldqyl7f2izczm4qsu2`, function(data){
+    console.log(data);
+    const dollar = data.result.offers.booksrun.new.price;
+    var Priset = (dollar == undefined) ? "Sold out" : `${data.result.offers.booksrun.new.price} $`;
+
+    var mängden = $('<p id="out"></p>').attr({ class:"card-text btn btn-primary"}).text(Priset);
+    mängden.css("background-color", "black");
+    mängden.css("width", "90%");
+    mängden.css("margin-left", "5%");
+    mängden.css("margin-right", "5%");
+    mängden.appendTo(card);
+})
   var help = card.appendTo("#whole");
   return help;
 }
