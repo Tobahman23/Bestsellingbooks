@@ -1,9 +1,20 @@
 *{
-
+    margin:0px;
+    padding:0px;
 }
 
 #whole{
-    padding-left:180px;
-    background-color:navy;
+    padding-left:10px;
+    background-color:black;
     border-color:black;
+    border-width:4px;
+    border-style:solid;
+    padding-right:10px;
+}
+#outer{
+    background-image:url("https://giffiles.alphacoders.com/276/2766.gif");
+    background-size:cover;
+    background-repeat:no-repeat;
+    padding-right:170px;
+    padding-left:170px;
 }
